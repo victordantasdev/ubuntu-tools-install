@@ -1,0 +1,25 @@
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
+window:
+  padding:
+    x: 4
+    y: 4
+  dynamic_padding: true
+
+font:
+	normal:
+    style: Light
+    family: "FiraCode Nerd Font"
+
+cursor:
+  style:
+    shape: Beam
+    blinking: Always
+  blink_interval: 500
+  unfocused_hollow: true
+  thickness: 0.15
