@@ -47,6 +47,9 @@ install() {
 
   sudo apt update
 
+  # enter on home dir
+  cd
+
   # install spaceship
   git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
   ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
@@ -55,7 +58,7 @@ install() {
   find ~/.zshrc -type f -exec sed -i 's/robbyrussell/spaceship/g' {} \;
 
   # adds aliases
-  cat aliases.sh >>~/.zshrc
+  cat ~/ubuntu-tools-install/aliases.sh >>~/.zshrc
 
   # install zsh plugins
   bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
@@ -68,7 +71,7 @@ install() {
   sudo add-apt-repository ppa:aslatter/ppa -y
 
   # copy config files
-  cp -r .config ~/.config
+  cp -r ~/ubuntu-tools-install/.config ~/.config
 
   # config flatpak
   flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
